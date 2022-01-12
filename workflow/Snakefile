@@ -1,4 +1,7 @@
 include: "rules/rule.smk"
+include: "rules/lineage.smk"
 
 rule all:
-    input: ""
+    input:
+        get_merged_mutation_metadata_file,
+        get_lineage_report
