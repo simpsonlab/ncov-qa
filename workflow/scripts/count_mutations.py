@@ -86,16 +86,15 @@ def import_variants(file):
                 continue
 
 
-def is_variant_N(var):
+def is_snp(var):
     """
-    Determine whether the variant is a stretch of Ns
+    Determine whether the variant is a SNP.  Note that only
+    the first ALT will be looked at
     """
-    pass
-    #var_list = list(set(var.ALT[0]))
-    #if len(var_list) == 1:
-    #    return True
-    #else:
-    #    return False
+    if (len(var.ALT[0]) == 1) and (len(var.ALT[0]) == len(var.REF)):
+        return True
+    else:
+        return False
 
 
 def is_variant_indel(var):
@@ -215,9 +214,8 @@ def main():
             'total_insertion': 0, 'total_deletion': 0,
             'total_frameshift': 0, 'completeness': 0.0}
     for var in vcf_reader:
-        if is_variant_N(var):
-            continue
-        if var.is_snp:
+        #if var.is_snp:
+        if is_snp(var) or is_mnp(var):
             variants['total_snp'] += 1
         if is_insertion(var):
             variants['total_insertion'] += 1
