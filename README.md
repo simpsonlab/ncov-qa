@@ -38,6 +38,11 @@ The files submitted by each institute include:
 
 * `lineage_report.csv`
 
+To run the pipeline:
+```
+snakemake -s /path/to/Snakefile --cores num_cores build_snpeff_db
+snakemake -s /path/to/Snakefile --cores num_cores all
+```
 
 ## Credits and Acknowledgements
 
