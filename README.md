@@ -5,7 +5,7 @@
 
 `ncov-qa` is the workflow used for the quality assessment of COVID-19
 data from participating institutes in Ontario.  Each institute provides
-results from FAST5/FASTQ files distriubted by [Public Health Ontario](https://www.publichealthontario.ca).
+results from FAST5/FASTQ files distributed by [Public Health Ontario](https://www.publichealthontario.ca).
 
 
 ## Installation
